@@ -19,5 +19,21 @@ export default {
 					message: message
 				})
 			})
-	}
+	},
+  saveContact: (contact) => {
+    ContactsAPI
+      .saveContact('http://www.somaku.com/users', contact)
+      .then(contact => {
+        AppDispatcher.dispatch({
+          actionType: AppConstants.RECIEVE_CONTACT,
+          contact: contact
+        })
+      })
+      .catch(message => {
+        AppDispatcher.dispatch({
+          actionType: AppConstants.RECIEVE_CONTACT_ERROR,
+          message: message
+        })
+      })
+  }
 }
