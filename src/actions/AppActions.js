@@ -6,7 +6,7 @@ import ContactsAPI from '../utils/ContactsAPI'
 export default {
 	recieveContacts: () => {
 		ContactsAPI
-			.getContacts('http://www.somaku.com/users')
+			.getContacts('https://jsonplaceholder.typicode.com/users')
 			.then(contacts => {
 				AppDispatcher.dispatch({
 					actionType: AppConstants.RECIEVE_CONTACTS,
@@ -22,7 +22,7 @@ export default {
 	},
   saveContact: (contact) => {
     ContactsAPI
-      .saveContact('http://www.somaku.com/users', contact)
+      .saveContact('https://jsonplaceholder.typicode.com/users', contact)
       .then(contact => {
         AppDispatcher.dispatch({
           actionType: AppConstants.RECIEVE_CONTACT,
@@ -32,6 +32,23 @@ export default {
       .catch(message => {
         AppDispatcher.dispatch({
           actionType: AppConstants.RECIEVE_CONTACT_ERROR,
+          message: message
+        })
+      })
+  },
+  deleteContact: (id) => {
+    ContactsAPI
+      .deleteContact('https://jsonplaceholder.typicode.com/users'+id)
+      .then(contact => {
+        console.log(contact)
+        AppDispatcher.dispatch({
+          actionType: AppConstants.DELETE_CONTACT,
+          id: id
+        })
+      })
+      .catch(message => {
+        AppDispatcher.dispatch({
+          actionType: AppConstants.DELETE_CONTACT_ERROR,
           message: message
         })
       })

@@ -63,7 +63,7 @@ class AddContact extends Component {
               placeholder="Add Phone"
             />
           </FormGroup>
-          <Button type="submit">Submit</Button>
+          <Button type="submit" bsStyle="success">Submit</Button>
         </form>
       </Panel>
     );
