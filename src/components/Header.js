@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {Navbar} from 'react-bootstrap'
 
 
@@ -16,4 +16,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default Header
