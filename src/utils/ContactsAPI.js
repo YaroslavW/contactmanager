@@ -18,9 +18,9 @@ export default {
         .send(contact)
         .end((err, response) => {
           if(err) reject(err);
-          resolve(JSON.parse(response.text))
+          resolve(JSON.parse(response.text));
         })
-    })
+    });
   },
   deleteContact: (url, id) => {
     return new Promise((resolve, reject) => {
@@ -30,6 +30,6 @@ export default {
           if(err) reject(err);
           resolve(JSON.parse(response.text));
         })
-    })
+    });
   }
 }

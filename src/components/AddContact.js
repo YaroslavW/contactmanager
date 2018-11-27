@@ -1,6 +1,6 @@
-import React, { Component } from 'react'
-import {Panel, FormGroup, Button} from 'react-bootstrap'
-import AppActions from '../actions/AppActions'
+import React, { Component } from 'react';
+import {Panel, FormGroup, Button} from 'react-bootstrap';
+import AppActions from '../actions/AppActions';
 
 class AddContact extends Component {
   constructor(props){
@@ -63,11 +63,11 @@ class AddContact extends Component {
               placeholder="Add Phone"
             />
           </FormGroup>
-          <Button type="submit" bsStyle="success">Submit</Button>
+          <Button type="submit">Submit</Button>
         </form>
       </Panel>
     );
   }
 }
 
-export default AddContact
+export default AddContact;
